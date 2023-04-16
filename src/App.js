@@ -29,28 +29,28 @@ function App() {
       document.body.style.backgroundColor = 'black';
       document.body.style.color = 'white';
       showAlert("Dark mode has been enabled", "success");
-      document.title = "TextUtils - Dark Mode"
+      // document.title = "TextUtils - Dark Mode"
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
       document.body.style.color = 'black';
       showAlert("Light mode has been enabled", "success");
-      document.title = "Textutils - Light Mode";
+      // document.title = "Textutils - Light Mode";
     }
   }
 
   return (
-    <div className = "App">
+    <>
       <Navbar title = "TextUtils" mode = {mode} toggleMode = {toggleMode}  />
       <Alert alert = {alert}/>
       <div className="container my-3">
         <Routes>
-          <Route path = "/" element = {<TextForm showAlert = {showAlert} heading = "Enter the text to analyse" mode = {mode} toggleMode = {toggleMode}/>} />
-          <Route path = "about" element = {<About />} />
+          <Route path = "/" element = {<TextForm showAlert = {showAlert} heading = "Try TextUtils - word counter, character counter, remove extra spaces" mode = {mode} toggleMode = {toggleMode}/>} />
+          <Route path = "about" element = {<About mode = {mode} />} />
         </Routes>
       </div>
-    </div>
+    </>
   );
 }
 
